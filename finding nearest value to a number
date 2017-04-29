@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void nearest(int num, int *ns, int A[], int n)
+{
+	int i, min;
+	min=abs(A[5]-num); //doesnt matter that where array element starts from
+	for(i=0;i<n;i++)
+	{
+		if(abs(A[i]-num)<=min)
+		{
+			min=abs(A[i]-num);
+			*ns=A[i];
+		}
+	}
+}
+int main()
+{
+	int n, num, ns, selected;
+	printf("Enter array's size:"); scanf("%d", &n);
+	int A[n];
+	
+	printf("Enter values:");
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d", &A[i]);
+	}
+	printf("Select a number:"); scanf("%d", &num);
+	nearest(num, &ns, A, n);
+	printf("Nearest number to %d is %d\n\n", num, ns);
+	system("pause");
+  return(0);
+}
