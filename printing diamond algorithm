@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+	int n, ch, k, space=1;
+	 
+	printf("Enter number of rows:"); scanf("%d", &n);
+	printf("\n");
+	  
+	space=n-1;		//to determine number of blank characters which is going to put before putting '*' character.
+	 
+	for (k=1;k<=n;k++)
+	{
+		for (ch=1;ch<=space;ch++)
+		{
+	   		printf(" ");
+		}
+	 
+		space--;
+	 
+		for (ch=1;ch<=2*k-1;ch++) 	//multiplying by 2 and subtracting 1 to print a full triangle, not half 
+		{
+		   	printf("*");
+		}
+		printf("\n");
+	}
+	 
+	space=1;			//to print other symmetry of first triangle 
+	 
+	for (k=1;k<=n-1;k++)
+	{
+		for (ch=1;ch<=space;ch++)
+		{
+			printf(" ");
+		}    
+		space++;
+	 
+		for (ch=1;ch<=2*(n-k)-1;ch++)
+		{
+			printf("*");
+		} 
+		printf("\n");
+	}
+	
+	printf("\n\n");
+	system("pause");
+	return(0);
+}
