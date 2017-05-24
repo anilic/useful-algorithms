@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void compute(int number, int *left, int *right)
+{
+	*right=number%10;
+	*left=number;
+	
+	while(*left>=10)
+	{
+        *left = *left / 10;
+	}
+	
+}
+
+int main()
+{
+	int number, left, right;
+	
+	printf("Enter a number to find its first and last digits:"); scanf("%d", &number);
+	compute(number, &left, &right);
+	printf("First digit is: %d\n", left);
+	printf("Last digit is: %d", right);
+	
+	return(0);
+}
