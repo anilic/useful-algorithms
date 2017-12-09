@@ -1,0 +1,28 @@
+// random number gerenerator.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+/*Döngü içerisinde her seferinde 5 farklı sayı bastırılacağı için
+randomNumber = 1 + rand() %10 ifadesini while ın içerisinde kullandım
+1+rand() %10 da 1 ile 10 arasında bir random number üreteceğini belirliyor*/
+
+int main()
+{
+	srand((unsigned)time(NULL));
+	int i=0;
+
+	while (i < 5)
+	{
+		int randomNumber = 1 + rand() % 10;
+		cout << "#" << i + 1 << " random number: " << randomNumber << endl;
+		i++;
+	}
+
+    return 0;
+}
